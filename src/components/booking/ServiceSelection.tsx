@@ -23,12 +23,18 @@ const jakeServices = [
 ];
 
 const mariconServices = [
-  { id: 'm1', name: 'Classic Lashes', price: 700, duration: 90, description: 'Classic lash extensions', isStartingPrice: true },
-  { id: 'm2', name: 'Volume Lashes (70% Classic / 30% Volume)', price: 1200, duration: 120, description: 'Hybrid volume lash extensions', isStartingPrice: true },
-  { id: 'm3', name: 'Regular Volume (100% volume)', price: 1500, duration: 120, description: 'Full volume lash extensions', isStartingPrice: true },
-  { id: 'm4', name: 'Mascara Wetlash (100% Close Fan)', price: 1300, duration: 120, description: 'Wet look volume lashes', isStartingPrice: true },
-  { id: 'm5', name: 'Anime Lash (100% Close Fan)', price: 1300, duration: 120, description: 'Anime-style volume lashes', isStartingPrice: true },
-  { id: 'm6', name: 'Lash Lift with Tint', price: 1000, duration: 60, description: 'Lash lift and tinting service', isStartingPrice: true },
+  { id: 'm1', name: 'Classic Natural', price: 500, duration: 90, description: 'Fullset Additional 200 - Retouch starting price 300', isStartingPrice: true },
+  { id: 'm2', name: 'Hybrid (70% Classics 30% Volume)', price: 1000, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 400', isStartingPrice: true },
+  { id: 'm3', name: 'Regular Volume (100% Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: true },
+  { id: 'm4', name: 'Whispy (100% Texture Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: true },
+  { id: 'm5', name: 'Maskara Wetlash (100% Close from Volume)', price: 1300, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: true },
+  { id: 'm6', name: 'Anime Look (100% Close Fan)', price: 1300, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 400', isStartingPrice: true },
+  { id: 'm7', name: 'Lashlift with Tint', price: 800, duration: 60, description: 'Lash lift and tinting service', isStartingPrice: false },
+  { id: 'm8', name: 'Brow Wax', price: 200, duration: 20, description: 'Eyebrow waxing service', isStartingPrice: false },
+  { id: 'm9', name: 'Brow Tint', price: 500, duration: 30, description: 'Eyebrow tinting service', isStartingPrice: false },
+  { id: 'm10', name: 'Brow Tint & Wax', price: 650, duration: 40, description: 'Eyebrow tinting and waxing service', isStartingPrice: false },
+  { id: 'm11', name: 'Lash Remove', price: 200, duration: 30, description: 'Lash extension removal service', isStartingPrice: false },
+  { id: 'm12', name: 'Other Studio', price: 500, duration: 60, description: 'Other studio services', isStartingPrice: false },
 ];
 
 const ServiceSelection = ({ bookingData, setBookingData, onNext }: ServiceSelectionProps) => {
