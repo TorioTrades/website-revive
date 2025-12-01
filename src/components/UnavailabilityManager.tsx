@@ -18,19 +18,50 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// All possible time slots (10:00 AM to 8:00 PM with 15-minute intervals)
 const allTimeSlots = [
-  '9:00 AM', '9:20 AM', '9:40 AM',
-  '10:00 AM', '10:20 AM', '10:40 AM',
-  '11:00 AM', '11:20 AM', '11:40 AM',
-  '12:00 PM', '12:20 PM', '12:40 PM',
-  '1:00 PM', '1:20 PM', '1:40 PM',
-  '2:00 PM', '2:20 PM', '2:40 PM',
-  '3:00 PM', '3:20 PM', '3:40 PM',
-  '4:00 PM', '4:20 PM', '4:40 PM',
-  '5:00 PM', '5:20 PM', '5:40 PM',
-  '6:00 PM', '6:20 PM', '6:40 PM',
-  '7:00 PM',
+  '10:00 AM', '10:15 AM', '10:30 AM', '10:45 AM',
+  '11:00 AM', '11:15 AM', '11:30 AM', '11:45 AM', 
+  '12:00 PM', '12:15 PM', '12:30 PM', '12:45 PM',
+  '1:00 PM', '1:15 PM', '1:30 PM', '1:45 PM', 
+  '2:00 PM', '2:15 PM', '2:30 PM', '2:45 PM',
+  '3:00 PM', '3:15 PM', '3:30 PM', '3:45 PM', 
+  '4:00 PM', '4:15 PM', '4:30 PM', '4:45 PM',
+  '5:00 PM', '5:15 PM', '5:30 PM', '5:45 PM', 
+  '6:00 PM', '6:15 PM', '6:30 PM', '6:45 PM',
+  '7:00 PM', '7:15 PM', '7:30 PM', '7:45 PM', 
+  '8:00 PM'
 ];
+
+// Get time slots based on day of week
+// Sunday: 1:00 PM to 8:00 PM
+// Monday-Saturday: 10:00 AM to 7:00 PM
+const getTimeSlotsForDay = (date: Date | undefined): string[] => {
+  if (!date) return allTimeSlots;
+  
+  const dayOfWeek = date.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  
+  // Sunday (0): 1:00 PM to 8:00 PM
+  if (dayOfWeek === 0) {
+    return allTimeSlots.filter(slot => {
+      const hour = parseInt(slot.split(':')[0]);
+      const isPM = slot.includes('PM');
+      const hour24 = isPM && hour !== 12 ? hour + 12 : (hour === 12 && !isPM ? 0 : hour);
+      return hour24 >= 13 && hour24 <= 20; // 1 PM to 8 PM
+    });
+  }
+  
+  // Monday to Saturday (1-6): 10:00 AM to 7:00 PM (excluding 7:15, 7:30, 7:45)
+  return allTimeSlots.filter(slot => {
+    if (slot === '7:15 PM' || slot === '7:30 PM' || slot === '7:45 PM') {
+      return false;
+    }
+    const hour = parseInt(slot.split(':')[0]);
+    const isPM = slot.includes('PM');
+    const hour24 = isPM && hour !== 12 ? hour + 12 : (hour === 12 && !isPM ? 0 : hour);
+    return hour24 >= 10 && hour24 <= 19; // 10 AM to 7 PM
+  });
+};
 
 export const UnavailabilityManager = () => {
   const [selectedStylist, setSelectedStylist] = useState<string>('Jake');
@@ -40,10 +71,25 @@ export const UnavailabilityManager = () => {
   const [reason, setReason] = useState('');
   const [loading, setLoading] = useState(false);
   const [unavailableSlots, setUnavailableSlots] = useState<Unavailability[]>([]);
+  
+  // Get available time slots based on selected date
+  const availableTimeSlots = getTimeSlotsForDay(selectedDate);
 
   useEffect(() => {
     loadUnavailableSlots();
   }, []);
+
+  // Reset selected time slots when date changes (if the slots aren't valid for new day)
+  useEffect(() => {
+    if (selectedDate && selectedTimeSlots.length > 0) {
+      const validSlots = selectedTimeSlots.filter(slot => 
+        availableTimeSlots.includes(slot)
+      );
+      if (validSlots.length !== selectedTimeSlots.length) {
+        setSelectedTimeSlots(validSlots);
+      }
+    }
+  }, [selectedDate]);
 
   const loadUnavailableSlots = async () => {
     // For now, we'll fetch all unavailability records
@@ -99,7 +145,7 @@ export const UnavailabilityManager = () => {
 
     setLoading(true);
     const dateString = format(selectedDate, 'yyyy-MM-dd');
-    const timeSlotsToSave = isFullDay ? allTimeSlots : selectedTimeSlots;
+    const timeSlotsToSave = isFullDay ? availableTimeSlots : selectedTimeSlots;
 
     const result = await unavailabilityStore.setUnavailability(
       selectedStylist,
@@ -199,18 +245,31 @@ export const UnavailabilityManager = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-2">
-                {allTimeSlots.map(timeSlot => (
-                  <Button
-                    key={timeSlot}
-                    variant={selectedTimeSlots.includes(timeSlot) ? "destructive" : "outline"}
-                    onClick={() => handleTimeSlotToggle(timeSlot)}
-                    className="w-full"
-                  >
-                    {timeSlot}
-                  </Button>
-                ))}
-              </div>
+              {!selectedDate ? (
+                <p className="text-sm text-muted-foreground text-center py-4">
+                  Please select a date first to see available time slots
+                </p>
+              ) : (
+                <>
+                  <p className="text-xs text-muted-foreground">
+                    {selectedDate.getDay() === 0 
+                      ? 'Sunday hours: 1:00 PM - 8:00 PM' 
+                      : 'Mon-Sat hours: 10:00 AM - 7:00 PM'}
+                  </p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {availableTimeSlots.map(timeSlot => (
+                      <Button
+                        key={timeSlot}
+                        variant={selectedTimeSlots.includes(timeSlot) ? "destructive" : "outline"}
+                        onClick={() => handleTimeSlotToggle(timeSlot)}
+                        className="w-full"
+                      >
+                        {timeSlot}
+                      </Button>
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
 
