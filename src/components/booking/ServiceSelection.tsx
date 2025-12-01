@@ -8,18 +8,15 @@ interface ServiceSelectionProps {
 }
 
 const jakeServices = [
-  { id: 'j1', name: 'Haircut', price: 300, duration: 30, description: 'Professional haircut service', isStartingPrice: false },
-  { id: 'j3', name: 'Shampoo & Blowdry', price: 300, duration: 30, description: 'Shampoo and blowdry service', isStartingPrice: true },
-  { id: 'j11', name: 'Curl Iron with Shampoo', price: 400, duration: 30, description: 'Curl styling with shampoo service', isStartingPrice: false },
-  { id: 'j12', name: 'Charcoal Active Detox for Scalp', price: 1500, duration: 60, description: 'For men and women', isStartingPrice: true },
-  { id: 'j2', name: 'Hair Color', price: 1500, duration: 60, description: 'Professional hair coloring', isStartingPrice: true },
-  { id: 'j4', name: 'Hair Mask or Treatment', price: 1500, duration: 45, description: 'Nourishing hair treatment', isStartingPrice: true },
-  { id: 'j10', name: 'One Step Rebond with Hair Color and Hair Mask', price: 2500, duration: 120, description: 'Quick rebonding with color and treatment', isStartingPrice: true },
-  { id: 'j5', name: 'Highlights and Tone with Hair Mask Treatment', price: 3000, duration: 180, description: 'Complete highlighting service with treatment', isStartingPrice: true },
-  { id: 'j7', name: 'Keratin & Brazilian with Hair Color and Hair Mask', price: 3000, duration: 60, description: 'Keratin or Brazilian treatment with color', isStartingPrice: true },
-  { id: 'j8', name: 'Keratin with Hair Color and Hair Mask', price: 3500, duration: 120, description: 'Keratin treatment with color and mask', isStartingPrice: true },
-  { id: 'j6', name: 'Balayage & Tone with Hair Mask Treatment', price: 3500, duration: 180, description: 'Balayage coloring with treatment', isStartingPrice: true },
-  { id: 'j9', name: 'Brazilian Blow Out Original with Hair Color and Hair Mask', price: 4000, duration: 120, description: 'Original Brazilian blowout with color', isStartingPrice: true },
+  { id: 'j1', name: 'Blow Dry', price: 200, duration: 30, description: 'Professional blow dry service', isStartingPrice: false },
+  { id: 'j2', name: "Women's Hair Cut", price: 250, duration: 45, description: 'Professional haircut for women', isStartingPrice: false },
+  { id: 'j3', name: "Men's Hair Cut", price: 250, duration: 30, description: 'Professional haircut for men', isStartingPrice: false },
+  { id: 'j4', name: 'Curling', price: 300, duration: 45, description: 'Hair curling service', isStartingPrice: false },
+  { id: 'j5', name: 'Iron', price: 200, duration: 30, description: 'Hair straightening with iron', isStartingPrice: false },
+  { id: 'j6', name: 'Brazilian Keratin', price: 2500, duration: 120, description: 'Brazilian keratin treatment', isStartingPrice: true },
+  { id: 'j7', name: 'Package 1 (Color with Brazilian Keratin)', price: 3000, duration: 180, description: 'Hair color with Brazilian keratin treatment', isStartingPrice: true },
+  { id: 'j8', name: 'Package 2 (Classic One Step Rebond with Brazilian Keratin or Color)', price: 3000, duration: 180, description: 'Classic one step rebond with Brazilian keratin or color', isStartingPrice: true },
+  { id: 'j9', name: 'Classic Highlights or Balayage with Toner', price: 3000, duration: 180, description: 'Classic highlights or balayage with toner service', isStartingPrice: true },
 ];
 
 const mariconServices = [
