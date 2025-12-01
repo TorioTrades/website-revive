@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Appointment, appointmentStore } from '@/lib/appointmentStore';
 import { galleryStore, GalleryImage } from '@/lib/galleryStore';
-import { Calendar, Clock, User, Scissors, Phone, Mail, Search, ArrowLeft, Image as ImageIcon, Plus, Trash2, ChevronDown, FileText } from 'lucide-react';
+import { Calendar, Clock, User, Scissors, Phone, Mail, Search, ArrowLeft, Image as ImageIcon, Plus, Trash2, ChevronDown, FileText, CalendarClock } from 'lucide-react';
+import { UnavailabilityManager } from '@/components/UnavailabilityManager';
 import { format, isToday } from 'date-fns';
 import { toast } from 'sonner';
 import { Label } from '@/components/ui/label';
@@ -230,10 +231,11 @@ const Admin = () => {
         </div>
 
         <Tabs defaultValue="bookings" className="w-full">
-          <TabsList className="grid w-full max-w-2xl grid-cols-3">
+          <TabsList className="grid w-full max-w-3xl grid-cols-4">
             <TabsTrigger value="bookings">Bookings</TabsTrigger>
             <TabsTrigger value="history">Client History</TabsTrigger>
             <TabsTrigger value="gallery">Gallery</TabsTrigger>
+            <TabsTrigger value="unavailability">Unavailability</TabsTrigger>
           </TabsList>
 
           <TabsContent value="bookings" className="mt-6">
@@ -579,6 +581,10 @@ const Admin = () => {
                 </div>
               )}
             </div>
+          </TabsContent>
+
+          <TabsContent value="unavailability" className="mt-6">
+            <UnavailabilityManager />
           </TabsContent>
         </Tabs>
       </main>
