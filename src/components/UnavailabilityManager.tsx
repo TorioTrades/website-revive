@@ -41,13 +41,13 @@ const getTimeSlotsForDay = (date: Date | undefined): string[] => {
   
   const dayOfWeek = date.getDay(); // 0 = Sunday, 1 = Monday, etc.
   
-  // Sunday (0): 1:00 PM to 8:00 PM
+  // Sunday (0): 2:00 PM to 8:00 PM
   if (dayOfWeek === 0) {
     return allTimeSlots.filter(slot => {
       const hour = parseInt(slot.split(':')[0]);
       const isPM = slot.includes('PM');
       const hour24 = isPM && hour !== 12 ? hour + 12 : (hour === 12 && !isPM ? 0 : hour);
-      return hour24 >= 13 && hour24 <= 20; // 1 PM to 8 PM
+      return hour24 >= 14 && hour24 <= 20; // 2 PM to 8 PM
     });
   }
   
@@ -253,7 +253,7 @@ export const UnavailabilityManager = () => {
                 <>
                   <p className="text-xs text-muted-foreground">
                     {selectedDate.getDay() === 0 
-                      ? 'Sunday hours: 1:00 PM - 8:00 PM' 
+                      ? 'Sunday hours: 2:00 PM - 8:00 PM' 
                       : 'Mon-Sat hours: 10:00 AM - 7:00 PM'}
                   </p>
                   <div className="grid grid-cols-3 gap-2">
