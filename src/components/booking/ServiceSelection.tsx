@@ -82,6 +82,11 @@ const ServiceSelection = ({ bookingData, setBookingData, onNext }: ServiceSelect
                     <span className="text-lg font-bold text-primary">
                       ₱{service.price}
                     </span>
+                    {service.isStartingPrice && (
+                      <span className="text-xs text-muted-foreground">
+                        starting price
+                      </span>
+                    )}
                   </div>
                   <span className="text-xs text-muted-foreground">
                     {service.duration} mins
