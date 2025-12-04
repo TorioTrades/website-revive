@@ -163,6 +163,24 @@ const Admin = () => {
     await loadAppointments();
   };
 
+  const handleDeleteAppointment = async (appointmentId: string) => {
+    if (!confirm('Are you sure you want to delete this booking? This action cannot be undone.')) return;
+
+    const { error } = await supabase
+      .from('appointments')
+      .delete()
+      .eq('id', appointmentId);
+
+    if (error) {
+      toast.error('Failed to delete booking');
+      console.error('Error deleting appointment:', error);
+      return;
+    }
+
+    toast.success('Booking deleted successfully');
+    await loadAppointments();
+  };
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -322,6 +340,14 @@ const Admin = () => {
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="text-xs px-2 py-1 h-auto text-destructive hover:text-destructive hover:bg-destructive/10"
+                            onClick={() => handleDeleteAppointment(appointment.id)}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </Button>
                         </div>
                       </CardTitle>
                     </CardHeader>
