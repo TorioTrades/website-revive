@@ -7,7 +7,7 @@ const Location = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-8">
-                Visit Our Modern Clinic
+                Visit Our CJ Hair Lounge Salon   
               </h2>
             </div>
 
@@ -57,23 +57,11 @@ const Location = () => {
           </div>
 
           {/* Map */}
-          <a 
-            href="https://www.google.com/maps/dir//Unit+3,+CJ+hair+lounge,+MB+Building,+city,+Angeles,+2009+Pampanga/@15.1494234,120.574798,17z/data=!4m16!1m7!3m6!1s0x2bd5f29773142711:0x69f2928b36578da4!2sCJ+hair+lounge!8m2!3d15.1492499!4d120.5771908!16s%2Fg%2F11v43r0b1t!4m7!1m0!1m5!1m1!1s0x2bd5f29773142711:0x69f2928b36578da4!2m2!1d120.5771908!2d15.1492499?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-large border-2 border-primary/20 group cursor-pointer"
-          >
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.187405!2d120.5746095!3d15.1492499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bd5f29773142711%3A0x69f2928b36578da4!2sCJ%20hair%20lounge!5e0!3m2!1sen!2sph!4v1732874600000!5m2!1sen!2sph" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0, pointerEvents: 'none' }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade" 
-              title="CJ Hair Lounge Location" 
-              className="" 
-            />
+          <a href="https://www.google.com/maps/dir//Unit+3,+CJ+hair+lounge,+MB+Building,+city,+Angeles,+2009+Pampanga/@15.1494234,120.574798,17z/data=!4m16!1m7!3m6!1s0x2bd5f29773142711:0x69f2928b36578da4!2sCJ+hair+lounge!8m2!3d15.1492499!4d120.5771908!16s%2Fg%2F11v43r0b1t!4m7!1m0!1m5!1m1!1s0x2bd5f29773142711:0x69f2928b36578da4!2m2!1d120.5771908!2d15.1492499?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="block relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-large border-2 border-primary/20 group cursor-pointer">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.187405!2d120.5746095!3d15.1492499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bd5f29773142711%3A0x69f2928b36578da4!2sCJ%20hair%20lounge!5e0!3m2!1sen!2sph!4v1732874600000!5m2!1sen!2sph" width="100%" height="100%" style={{
+            border: 0,
+            pointerEvents: 'none'
+          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="CJ Hair Lounge Location" className="" />
             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors flex items-center justify-center">
               <div className="bg-background/90 px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 <span className="text-foreground font-semibold">Click for Directions</span>
