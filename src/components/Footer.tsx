@@ -71,7 +71,7 @@ const Footer = () => {
               <li>Hair Color & Highlights</li>
               <li>Rebonding</li>
               <li>Balayage</li>
-              <li>Eye Lash Extension</li>
+              <li>Eyelash Extension</li>
             </ul>
           </div>
 
