@@ -22,7 +22,7 @@ const jakeServices = [
 ];
 
 const mariconServices = [
-  { id: 'm1', name: 'Classic Natural', price: 500, duration: 90, description: 'Fullset Additional 200 - Retouch starting price 300', isStartingPrice: false },
+  { id: 'm1', name: 'Classic Natural', price: 700, duration: 90, description: 'Fullset Additional 200 - Retouch starting price 300', isStartingPrice: false },
   { id: 'm2', name: 'Hybrid (70% Classics 30% Volume)', price: 1000, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 400', isStartingPrice: false },
   { id: 'm3', name: 'Regular Volume (100% Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: false },
   { id: 'm4', name: 'Whispy (100% Texture Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: false },
