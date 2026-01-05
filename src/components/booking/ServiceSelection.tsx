@@ -8,30 +8,31 @@ interface ServiceSelectionProps {
 }
 
 const jakeServices = [
-  { id: 'j1', name: 'Blow Dry', price: 200, duration: 30, description: 'Professional blow dry service', isStartingPrice: false },
-  { id: 'j2', name: "Women's Hair Cut", price: 250, duration: 45, description: 'Professional haircut for women', isStartingPrice: false },
-  { id: 'j3', name: "Men's Hair Cut", price: 250, duration: 30, description: 'Professional haircut for men', isStartingPrice: false },
-  { id: 'j4', name: 'Curling', price: 300, duration: 45, description: 'Hair curling service', isStartingPrice: false },
-  { id: 'j5', name: 'Iron', price: 200, duration: 30, description: 'Hair straightening with iron', isStartingPrice: false },
-  { id: 'j6', name: 'Brazilian Keratin', price: 2500, duration: 120, description: 'Brazilian keratin treatment', isStartingPrice: true },
-  { id: 'j7', name: 'Package 1 (Color with Brazilian Keratin)', price: 3000, duration: 180, description: 'Hair color with Brazilian keratin treatment', isStartingPrice: true },
-  { id: 'j8', name: 'Package 2 (Classic One Step Rebond with Brazilian Keratin or Color)', price: 3000, duration: 180, description: 'Classic one step rebond with Brazilian keratin or color', isStartingPrice: true },
-  { id: 'j9', name: 'Classic Highlights or Balayage with Toner', price: 3000, duration: 180, description: 'Classic highlights or balayage with toner service', isStartingPrice: true },
+  { id: 'j1', name: "Men's Hair Cut", price: 300, duration: 30, description: 'Professional haircut for men', isStartingPrice: false },
+  { id: 'j2', name: "Women's Hair Cut", price: 300, duration: 45, description: 'Professional haircut for women', isStartingPrice: false },
+  { id: 'j3', name: 'Hair Color', price: 1500, duration: 120, description: 'Professional hair coloring service', isStartingPrice: true },
+  { id: 'j4', name: 'Shampoo and Blow Dry', price: 300, duration: 30, description: 'Shampoo and blow dry service', isStartingPrice: false },
+  { id: 'j5', name: 'Curl Iron with Shampoo', price: 400, duration: 45, description: 'Curl iron styling with shampoo', isStartingPrice: false },
+  { id: 'j6', name: 'Hair Mask or Treatment', price: 1500, duration: 60, description: 'Deep conditioning hair mask or treatment', isStartingPrice: true },
+  { id: 'j7', name: 'Charcoal Active Detox for Scalp', price: 1500, duration: 60, description: 'Charcoal detox treatment for scalp', isStartingPrice: true },
+  { id: 'j8', name: 'Highlights & Tone Hair Mask with Treatment', price: 3500, duration: 180, description: 'Highlights and tone with hair mask treatment', isStartingPrice: true },
+  { id: 'j9', name: 'Keratin and Brazilian with Hair Color and Hair Mask (After 2 days)', price: 3500, duration: 180, description: 'Keratin and Brazilian treatment with hair color and mask', isStartingPrice: true },
+  { id: 'j10', name: 'Brazilian Blow Out Original with Hair Color and Hair Mask (After 2 days)', price: 4000, duration: 180, description: 'Brazilian blow out with hair color and mask', isStartingPrice: true },
+  { id: 'j11', name: 'One Step Rebond with Hair Color and Hair Mask', price: 5000, duration: 240, description: 'One step rebond with hair color and hair mask', isStartingPrice: true },
 ];
 
 const mariconServices = [
-  { id: 'm1', name: 'Classic Natural', price: 500, duration: 90, description: 'Fullset Additional 200 - Retouch starting price 300', isStartingPrice: false },
-  { id: 'm2', name: 'Hybrid (70% Classics 30% Volume)', price: 1000, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 400', isStartingPrice: false },
-  { id: 'm3', name: 'Regular Volume (100% Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: false },
-  { id: 'm4', name: 'Whispy (100% Texture Volume)', price: 1200, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: false },
-  { id: 'm5', name: 'Maskara Wetlash (100% Close from Volume)', price: 1300, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 500', isStartingPrice: false },
-  { id: 'm6', name: 'Anime Look (100% Close Fan)', price: 1300, duration: 120, description: 'Fullset Additional 300 - Retouch starting price 400', isStartingPrice: false },
-  { id: 'm7', name: 'Lashlift with Tint', price: 800, duration: 60, description: 'Lash lift and tinting service', isStartingPrice: false },
-  { id: 'm8', name: 'Brow Wax', price: 200, duration: 20, description: 'Eyebrow waxing service', isStartingPrice: false },
-  { id: 'm9', name: 'Brow Tint', price: 500, duration: 30, description: 'Eyebrow tinting service', isStartingPrice: false },
-  { id: 'm10', name: 'Brow Tint & Wax', price: 650, duration: 40, description: 'Eyebrow tinting and waxing service', isStartingPrice: false },
-  { id: 'm11', name: 'Lash Remove', price: 200, duration: 30, description: 'Lash extension removal service', isStartingPrice: false },
-  { id: 'm12', name: 'Other Studio', price: 500, duration: 60, description: 'Other studio services', isStartingPrice: false },
+  { id: 'm1', name: "Men's Hair Cut", price: 300, duration: 30, description: 'Professional haircut for men', isStartingPrice: false },
+  { id: 'm2', name: "Women's Hair Cut", price: 300, duration: 45, description: 'Professional haircut for women', isStartingPrice: false },
+  { id: 'm3', name: 'Hair Color', price: 1500, duration: 120, description: 'Professional hair coloring service', isStartingPrice: true },
+  { id: 'm4', name: 'Shampoo and Blow Dry', price: 300, duration: 30, description: 'Shampoo and blow dry service', isStartingPrice: false },
+  { id: 'm5', name: 'Curl Iron with Shampoo', price: 400, duration: 45, description: 'Curl iron styling with shampoo', isStartingPrice: false },
+  { id: 'm6', name: 'Hair Mask or Treatment', price: 1500, duration: 60, description: 'Deep conditioning hair mask or treatment', isStartingPrice: true },
+  { id: 'm7', name: 'Charcoal Active Detox for Scalp', price: 1500, duration: 60, description: 'Charcoal detox treatment for scalp', isStartingPrice: true },
+  { id: 'm8', name: 'Highlights & Tone Hair Mask with Treatment', price: 3500, duration: 180, description: 'Highlights and tone with hair mask treatment', isStartingPrice: true },
+  { id: 'm9', name: 'Keratin and Brazilian with Hair Color and Hair Mask (After 2 days)', price: 3500, duration: 180, description: 'Keratin and Brazilian treatment with hair color and mask', isStartingPrice: true },
+  { id: 'm10', name: 'Brazilian Blow Out Original with Hair Color and Hair Mask (After 2 days)', price: 4000, duration: 180, description: 'Brazilian blow out with hair color and mask', isStartingPrice: true },
+  { id: 'm11', name: 'One Step Rebond with Hair Color and Hair Mask', price: 5000, duration: 240, description: 'One step rebond with hair color and hair mask', isStartingPrice: true },
 ];
 
 const ServiceSelection = ({ bookingData, setBookingData, onNext }: ServiceSelectionProps) => {
