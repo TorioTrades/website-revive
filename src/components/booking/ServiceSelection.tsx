@@ -18,7 +18,8 @@ const jakeServices = [
   { id: 'j8', name: 'Highlights & Tone Hair Mask with Treatment', price: 3500, duration: 180, description: 'Highlights and tone with hair mask treatment', isStartingPrice: true },
   { id: 'j9', name: 'Keratin and Brazilian with Hair Color and Hair Mask (After 2 days)', price: 3500, duration: 180, description: 'Keratin and Brazilian treatment with hair color and hair mask', isStartingPrice: true },
   { id: 'j10', name: 'Brazilian Blow Out Original with Hair Color and Hair Mask (After 2 days)', price: 4000, duration: 180, description: 'Brazilian blow out with hair color and hair mask', isStartingPrice: true },
-  { id: 'j11', name: 'One Step Rebond with Hair Color and Hair Mask', price: 5000, duration: 240, description: 'One step rebond with hair color and hair mask', isStartingPrice: true },
+  { id: 'j11', name: 'One Step Rebond with Hair Color and Hair Mask', price: 3000, duration: 240, description: 'One step rebond with hair color and hair mask', isStartingPrice: true },
+  { id: 'j12', name: 'Perm', price: 2500, duration: 120, description: 'Professional perm service', isStartingPrice: true },
 ];
 
 const mariconServices = [
