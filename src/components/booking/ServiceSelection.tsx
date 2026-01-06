@@ -20,6 +20,7 @@ const jakeServices = [
   { id: 'j10', name: 'Brazilian Blow Out Original with Hair Color and Hair Mask (After 2 days)', price: 4000, duration: 180, description: 'Brazilian blow out with hair color and hair mask', isStartingPrice: true },
   { id: 'j11', name: 'One Step Rebond with Hair Color and Hair Mask', price: 3000, duration: 240, description: 'One step rebond with hair color and hair mask', isStartingPrice: true },
   { id: 'j12', name: 'Perm', price: 2500, duration: 120, description: 'Professional perm service', isStartingPrice: true },
+  { id: 'j13', name: 'Balayage', price: 4500, duration: 180, description: 'Professional balayage hair coloring technique', isStartingPrice: true },
 ];
 
 const mariconServices = [
